@@ -38,7 +38,18 @@ void load_sample_processes() {
     processes[2] = (Process){3, "File Manager", 2, 5, 2, 5, 2, -1, -1, -1, -1, 0, "New"};
     processes[3] = (Process){4, "Compiler", 8, 6, 4, 20, 8, -1, -1, -1, -1, 0, "New"};
     processes[4] = (Process){5, "Media Player", 4, 10, 1, 25, 4, -1, -1, -1, -1, 0, "New"};
-    process_count = 5; // Set the count
+    processes[5] = (Process){6, "Database", 10, 0, 3, 15, 10, -1, -1, -1, -1, 0, "New"};
+    processes[6] = (Process){7, "Systems Programming", 6, 3, 5, 30, 6, -1, -1, -1, -1, 0, "New"};
+    processes[7] = (Process){8, "Automatta", 4, 5, 2, 5, 2, -1, -1, -1, -1, 0, "New"};
+    processes[8] = (Process){9, "Data Structures", 8, 6, 4, 20, 8, -1, -1, -1, -1, 0, "New"};
+    processes[9] = (Process){10, "Algorithms", 6, 10, 1, 25, 4, -1, -1, -1, -1, 0, "New"};
+    processes[10] = (Process){11, "Excel Process", 10, 0, 3, 15, 10, -1, -1, -1, -1, 0, "New"};
+    processes[11] = (Process){12, "Power Point", 6, 3, 5, 30, 6, -1, -1, -1, -1, 0, "New"};
+    processes[12] = (Process){13, "Publisher", 4, 5, 2, 5, 2, -1, -1, -1, -1, 0, "New"};
+    processes[13] = (Process){14, "Microsoft Access", 8, 6, 4, 20, 8, -1, -1, -1, -1, 0, "New"};
+    processes[14] = (Process){15, "Camera", 6, 10, 1, 25, 4, -1, -1, -1, -1, 0, "New"};
+    
+    process_count = 15; // Set the count
 }
 
 // Function to allocate memory to a process
