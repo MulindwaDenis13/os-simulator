@@ -259,54 +259,7 @@ void round_robin(int quantum) {
 
 // Priority Scheduling algorithm (Non-preemptive)
 void priority_scheduling() {
-    reset_processes();
-    printf("\n--- Priority Scheduling ---\n");
-
-    int completed = 0, time = 0;
-
-    while (completed < process_count) {
-        int highest_priority_index = -1;
-        int highest_priority = 9999;
-
-        // Find process with highest priority (lowest value)
-        for (int i = 0; i < process_count; i++) {
-            Process *p = &processes[i];
-            if (p->completion_time == -1 && p->arrival_time <= time && p->priority < highest_priority) {
-                highest_priority = p->priority;
-                highest_priority_index = i;
-            }
-        }
-
-        if (highest_priority_index == -1) {
-            time++; // CPU idle
-            continue;
-        }
-
-        Process *p = &processes[highest_priority_index];
-
-        if (!allocate_memory(p)) {
-            printf("Process %d skipped (Insufficient memory)\n", p->pid);
-            p->completion_time = 0; // Mark as skipped
-            completed++;
-            continue;
-        }
-
-        strcpy(p->state, "Running");
-        p->start_time = time;
-        p->completion_time = time + p->burst_time;
-        p->turnaround_time = p->completion_time - p->arrival_time;
-        p->waiting_time = p->start_time - p->arrival_time;
-        time = p->completion_time;
-        strcpy(p->state, "Terminated");
-
-        printf("| %s [%d - %d] ", p->name, p->start_time, p->completion_time);
-
-        deallocate_memory(p);
-        completed++;
-    }
-
     printf("|\n");
-    calculate_metrics();
 }
 
 // Main function with menu
